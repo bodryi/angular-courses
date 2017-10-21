@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML Document</title>
+</head>
+
+<body>
+    <h1>Demo 5</h1>
+</body>
+<script>
+    // prototype style oop
+    // __proto__
+    var animal = {
+        eats: true
+    };
+    var rabbit = {
+        jumps: true
+        //eats: false
+    };
+
+    rabbit.__proto__ = animal;
+    console.log(rabbit);
+    //rabbit.hasOwnProperty('eats');
+    //Object.create({data: 'data'}) //creates without prototype
+
+    // prototype
+    function Rabbit(name) { // it makes sense only for constructors
+        this.name = name;
+    }
+
+    Rabbit.prototype = animal;
+
+    //prototype inheritance
+    function Animal(name) {
+        this.name = name;
+        this.speed = 0;
+    }
+
+    Animal.prototype.run = function(speed) {
+        this.speed += speed;
+        console.log( this.name + ' runs, speed is ' + this.speed );
+    };
+
+    Animal.prototype.stop = function() {
+        this.speed = 0;
+        console.log( this.name + ' stopped');
+    };
+
+
+    function Bird(name) {
+        this.name = name;
+        this.speed = 0;
+        //Animal.apply(this, arguments); //not to write the same code
+    }
+
+    Bird.prototype = Object.create(Animal.prototype); // to create without proto
+    Bird.prototype.constructor = Bird; // it can be lost easily, so we can assign it manually
+
+    Bird.prototype.fly = function() {
+        this.speed++;
+        console.log( this.name + ' flies' );
+    };
+
+    var bird = new Bird('Parrot');
+
+    //method override
+    Bird.prototype.run = function(speed) {
+        this.speed++;
+        //Animal.prototype.run.apply(this, arguments);
+        this.fly();
+    };
+
+    console.log(bird);
+
+</script>
+
+</html>

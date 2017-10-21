@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML Document</title>
+</head>
+
+<body>
+    <h1>Demo 5</h1>
+</body>
+<script>
+    //Functional oop
+    function Animal(name) {
+        // this = {}; // at first it's an empty object, later we add some properties to it
+        this.name = name;
+        this.canWalk = true;
+        this.printName = function() {
+            console.log(getName());
+        };
+
+       // var self = this;
+        function getName() {
+            //return 'Name: ' + self.name;
+            return 'Name: ' + this.name;
+        }
+        // by default it returns this
+        // return this;
+    }
+
+     var animal1 = new Animal('rabbit');
+     animal1.printName();
+
+     //////////////////////////////////////////////////////////////////////////////
+
+    // private properties, incapsulation
+  /*  function Animal() {
+        var name = 'unnamed';
+        this.canWalk = true;
+
+        this.setName = function(animalName) {
+            if(animalName) {
+                name = animalName;
+            }
+            else {
+                throw new Error("Name can't be empty");
+            }
+        }
+
+        this.getName = function() {
+            return name;
+        }
+
+
+        this.printName = function() {
+            console.log(getNameForPrint());
+        };
+
+        function getNameForPrint() {
+            return 'Name: ' + name;
+        }
+    }
+
+    var animal = new Animal();
+    console.log(animal);
+    animal.printName();
+    animal.setName('rabbit');
+    console.log(animal.getName());*/
+    // it will cause error
+   // animal.setName(''); // Error
+
+</script>
+
+</html>

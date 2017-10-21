@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>HTML Document</title>
+   </head>
+   <body>
+      <h1>Demo 2</h1>
+   </body>
+   	<script>
+        //global object window
+        var our_var = "it's a string";
+        console.log(window.our_var);
+
+        //lexical env example
+        function printString(str) {
+            // LexicalEnvironment = { str: "it's a string", result: undefined }
+            var result = 'Added to each string, ' + str;
+            // LexicalEnvironment = { str: "it's a string", result: "Added to each string, it's a string" }
+            console.log(result);
+        }
+
+        // it searches for var in it's lexical env at first, then it takes global object
+        function printString_v2() {
+            console.log(our_var);
+        }
+
+        printString(our_var);
+        printString_v2();
+        // hidden property for function when it's created
+        // printString_v2.[[Scope]] = window
+
+        our_var = 'new string';
+        printString_v2();
+        // current value of our_var
+
+        var a = 'a from window';
+        function getFunction() {
+            var a = 'a from function';
+            //var func = new Function('', 'console.log(a)');
+            var func = function() {console.log(a);};
+            return func;
+        }
+
+        getFunction()();
+	</script>
+</html>

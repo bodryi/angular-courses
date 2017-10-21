@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>HTML Document</title>
+   </head>
+   <body>
+      <h1>Demo 1</h1>
+   </body>
+   	<script>
+        //script tag
+		console.log('hello world');
+
+        //data types
+        let n = 123; //number
+        let s = 'hello world'; //string
+        let b = true; //boolean
+        let a = null; //null
+        let u = undefined; //undefined
+        let o = {}; //object
+        let o_with_fields = {
+            field1: 123,
+            field2: 'string',
+            field3: true,
+            field4: {
+                field4_1: false
+            }
+        };
+
+        //o_with_fields.field2
+        //o_with_fields['field3'];
+
+        //conditional expressions
+        if(b) {
+            console.log(s);
+        } else {
+            console.log(s + ', in else');
+        }
+
+        //loops
+        let i = 0;
+        while(i < 10) {
+            console.log(i);
+            i++;
+        }
+
+        for(let k = 0; k < 10; k++) {
+            console.log(k);
+        }
+
+        
+	</script>
+</html>

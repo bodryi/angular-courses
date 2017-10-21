@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML Document</title>
+</head>
+
+<body>
+    <h1>Demo 4</h1>
+</body>
+<script>
+    // access object fields with a keyword "this"
+    var car = {
+        carName: 'Lada',
+        startEngine: function () {
+            console.log(this.carName + "'s " + 'engine started!');
+        }
+    }
+
+    car.startEngine();
+
+    // different contexts in different objects, it will gain its context at call moment
+    function func() {
+        console.log(this.firstName);
+    }
+
+    var user = { firstName: 'Fred' };
+    var employee = { firstName: 'Bob' };
+
+    user.f = func;
+    employee.g = func;
+
+    user.f();
+    employee.g();
+
+    //use call(context, ar1, arg2 ...), bind, apply (context, [arg1, arg2 ...])
+
+    function showFullName() {
+        console.log(this.firstName + " " + this.lastName );
+    }
+
+    var test_user = {
+        firstName: "John",
+        lastName: "Doe"
+    };
+
+    //undefined
+    showFullName();
+    // calls immediatly
+    showFullName.call(test_user);
+    // with bind it doesn't call immediatly!!
+    showFullName.bind(test_user)();
+
+</script>
+
+</html>

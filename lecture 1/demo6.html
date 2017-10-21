@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML Document</title>
+</head>
+
+<body>
+    <h1>Demo 6</h1>
+</body>
+
+<script>
+    //let, const - block-scoped variables
+    let a = 5;
+    const b = 2;
+    //b = 6; //Error
+
+    const obj = {
+        name: "Petr"
+    };
+
+    obj.name = "Fill";
+
+    //Destructuring
+    let [firstName, lastName] = ["John", "Doe", "will be ignored"];
+    //spread
+    let [firstName2, lastName2, ...rest] = "John Doe and the rest of the string".split(" ");
+    console.log(firstName, lastName);
+    console.log(firstName2, lastName2, rest);
+
+    //default values
+    let [x = 'default value', y = 'another default value'] = [];
+
+    //Destructuring of object
+    let {name, status, messages: messagesCount} = {
+        name: "Bob",
+        password: "qweqwesdf",
+        status: 'online',
+        messages: 23
+    }
+    console.log(name, status, messagesCount);
+
+    //default params in functions
+    function printTitle(title = 'default title') {
+        console.log(title);
+    }
+
+    printTitle();
+    printTitle('my title');
+
+    //arrow functions, they don't have their own 'this'
+    let inc = x => x + 1;
+    let sum = (a, b) => a + b;
+    let getTime = () => new Date().getHours() + ':' + new Date().getMinutes();
+    let bigFunc = () => {
+        let str = 'this is a big function';
+        return str;
+    };
+
+    // template strings
+    let currTime = `Current time is ${getTime()}`;
+
+    //Promises
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('from promise');
+            //reject('ERROR from promise');
+        }, 3500);
+    });
+
+    promise
+    .then((msg) => {
+        console.log(msg);
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('from chained promise');
+            }, 3500);
+        });    
+    })
+    .then((msg) => {
+        console.log(msg);
+    })
+    .catch((error) => {
+        console.log('error');
+    })
+
+    //Promise.all, Promise.race
+</script>
+
+</html>

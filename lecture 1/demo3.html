@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML Document</title>
+</head>
+
+<body>
+    <h1>Demo 3</h1>
+</body>
+<script>
+    //garbage collector demo
+    function marry(man, woman) {
+        woman.husband = man;
+        man.wife = woman;
+
+        return {
+            father: man,
+            mother: woman
+        }
+    }
+
+    var family = marry(
+        {
+            name: "Василий"
+        },
+        {
+            name: "Мария"
+        }
+    );
+
+    //delete family.father;
+    //delete family.mother.husband;
+
+</script>
+
+</html>

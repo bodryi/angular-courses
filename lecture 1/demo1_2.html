@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>HTML Document</title>
+   </head>
+   <body>
+      <h1>Demo 1</h1>
+   </body>
+   	<script>
+        console.log(sum(2, 2));
+        //console.log(multiply(2, 2)); //error
+
+
+        // function declaration
+        function sum(a, b) {
+            return a + b;
+        };
+
+        // function expression
+        let multiply = function(a, b) {
+            return a * b;
+        };
+
+        // named function expression
+        let factorial = function fact(n) {
+            return n ? n * fact(n - 1) : 1;
+        }
+
+        let arrowFunction = () => {
+            console.log('hello world');
+        }
+
+        console.log(sum(2, 2));
+        console.log(multiply(2, 2));
+        console.log(factorial(5));
+        console.log(arrowFunction);
+
+	</script>
+</html>
