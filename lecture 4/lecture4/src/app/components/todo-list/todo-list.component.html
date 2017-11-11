@@ -1,0 +1,7 @@
+<div *ngFor="let todo of todoList"
+     class="todo-item"
+     (click)="todoClick(todo.id)"
+>
+	<input type="checkbox" [checked]="todo.checked">
+	<p>{{todo.name}}</p>
+</div>

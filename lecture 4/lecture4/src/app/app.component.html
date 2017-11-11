@@ -1,0 +1,13 @@
+<div class="app-wrapper">
+	<h1 class="app-header">{{appTitle}}</h1>
+	<hr>
+	<todo-list [todoList]="todoList"
+	           (todoClicked)="toggleTodoStatus($event)"
+	></todo-list>
+	<hr>
+	<counter [allTasksCount]="todoList.length"
+			 [completedTasksCount]="getCompletedTaskCount()"
+	></counter>
+</div>
+
+
