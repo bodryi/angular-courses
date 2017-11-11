@@ -6,4 +6,5 @@ Every Friday 18:00 <br>
 <ul>
 <li>letcure 1 - 20.10.2017</li>
 <li>letcure 2 - 27.10.2017</li>
+<li>letcure 3 - 03.11.2017</li>
 </ul>
