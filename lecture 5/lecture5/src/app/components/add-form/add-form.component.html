@@ -1,0 +1,21 @@
+<form [formGroup]="myForm" (submit)="handleSubmit(myForm.value)">
+    <label>
+        Title
+        <input formControlName="name" />
+	    <span [hidden]="!myForm.controls.name.hasError('required')">Field is required!</span>
+	    <span [hidden]="!myForm.controls.name.hasError('minlength')">Min length is 5!</span>
+    </label>
+    <button [disabled]="!myForm.valid">Add todo</button>
+
+	<button type="button" (click)="addSubTodo()">+ sub todo</button>
+    <div formArrayName="subTodos">
+	    <div  class="subtodo-item" *ngFor="let subtodo of subTodos.controls; let i = index">
+		    <label [formGroupName]="i">
+			    Sub todo #{{i+1}}
+			    <input formControlName="name" />
+		    </label>
+		    <button type="button" (click)="removeSubtodo(i)">Remove subtodo</button>
+	    </div>
+
+    </div>
+</form>

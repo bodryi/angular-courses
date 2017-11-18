@@ -1,0 +1,16 @@
+<div *ngFor="let todo of todoList; let i = index"
+
+     (click)="todoClick(todo.id)"
+>
+	<div class="todo-item">
+		<input type="checkbox" [checked]="todo.checked">
+		<p>{{todo.name}}</p>
+
+		<button class="edit-btn" (click)="toggleExpand(i, $event)" *ngIf="todo.subTodos.length">Show more...</button>
+	</div>
+	<ul *ngIf="todosToggleState[i]">
+		<li *ngFor="let subtodo of todo.subTodos">
+			{{subtodo.name}}
+		</li>
+	</ul>
+</div>
