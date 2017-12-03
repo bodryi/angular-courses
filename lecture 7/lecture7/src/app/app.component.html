@@ -1,0 +1,15 @@
+<h1>Data for pipe</h1>
+<ul>
+	<li *ngFor="let file of filesArray">
+		{{file.name}}: {{file.size | formatSize:true}}
+	</li>
+</ul>
+
+<h1>Data for directive</h1>
+<ul>
+	<li *ngFor="let item of dataArray"
+	    app-highlight="{{item.color}}"
+	>
+		{{item.title}} - {{item.color || 'default'}}
+	</li>
+</ul>
