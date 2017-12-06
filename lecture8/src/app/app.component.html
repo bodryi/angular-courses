@@ -1,0 +1,17 @@
+<div class="app-wrapper">
+	<h1 class="app-header">{{appTitle}}</h1>
+	<hr>
+	<add-form></add-form>
+	<hr>
+	<todo-list [todoList]="todoList"
+             [todoEditId]="todoEditId"
+	           (todoClicked)="toggleTodoStatus($event)"
+             (todoEdit)="enableEditMode($event)"
+	></todo-list>
+	<hr>
+	<counter [allTasksCount]="todoList.length"
+			 [completedTasksCount]="getCompletedTaskCount()"
+	></counter>
+</div>
+
+

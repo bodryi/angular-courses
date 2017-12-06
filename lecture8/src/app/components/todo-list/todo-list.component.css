@@ -1,0 +1,28 @@
+.todo-item {
+	display : flex;
+	margin  : 10px;
+}
+
+.todo-item input[type=checkbox] {
+	margin-top : 18px;
+}
+
+.todo-item p {
+	margin-left : 10px;
+}
+
+.todo-item:hover {
+	background : lightgray;
+	cursor     : pointer;
+}
+
+.edit-btn {
+	margin-left  : auto;
+	margin-right : 10px;
+	align-self   : center;
+}
+
+.subtodo-item {
+	margin     : 10px;
+	font-style : italic;
+}
