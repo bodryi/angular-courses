@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.todoList = this.todoService.getTodos();
+  	this.refreshTodos();
   }
 
   toggleTodoStatus(id: number) {
@@ -28,5 +28,12 @@ export class AppComponent implements OnInit {
 
 	getCompletedTaskCount():number {
 	    return this.todoList.filter((todo: TodoModel) => todo.checked).length;
+	}
+
+	refreshTodos() {
+		this.todoService.getTodos()
+		    .then(res => {
+			    this.todoList = res;
+		    });
 	}
 }

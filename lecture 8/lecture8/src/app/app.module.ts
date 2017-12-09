@@ -8,6 +8,7 @@ import { TodoService } from "./services/todo.service";
 import { CommonModule } from "@angular/common";
 import { AddFormComponent } from './components/add-form/add-form.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from "@angular/forms";
   imports: [
     BrowserModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

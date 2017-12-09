@@ -1,7 +1,9 @@
 import {
 	Component,
 	Input,
-	OnInit
+	OnInit,
+	Output,
+	EventEmitter
 } from '@angular/core';
 import {
 	FormControl,
@@ -18,6 +20,8 @@ import { TodoModel } from "../../models/todo.model";
 	           styleUrls  : ['add-form.component.css']
            })
 export class AddFormComponent implements OnInit {
+	@Output() todoAdded: EventEmitter<any> = new EventEmitter<any>();
+
 	myForm: FormGroup;
 	initId = 100;
 
@@ -45,8 +49,12 @@ export class AddFormComponent implements OnInit {
 	}
 
 	handleSubmit(value: any) {
-		this.todoService.addTodo(Object.assign(new TodoModel(), value));
+		this.todoService.addTodo(Object.assign(new TodoModel(), value))
+			.then(() => this.todoAdded.emit(true))
+			.catch(err => console.log(err));
 
-		this.myForm.reset();
+		this.myForm.reset({
+			id: this.initId++
+		                  });
 	}
 }

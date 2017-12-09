@@ -1,7 +1,7 @@
 <div class="app-wrapper">
 	<h1 class="app-header">{{appTitle}}</h1>
 	<hr>
-	<add-form></add-form>
+	<add-form (todoAdded)="refreshTodos()"></add-form>
 	<hr>
 	<todo-list [todoList]="todoList"
              [todoEditId]="todoEditId"
