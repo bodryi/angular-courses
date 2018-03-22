@@ -1,7 +1,8 @@
 # Course for eltech studends
 Development of web apps with Angular 4+.<br>
-Every Friday 18:00 <br>
-<b>UPDATE</b> a.5427
+<strike>Every Friday 18:00 (1 sem)</strike><br>
+Every Wednesday  18:00 (2 sem)<br>
+a.5427
 #
 <ul>
 <li>letcure 1 - 20.10.2017</li>
@@ -14,4 +15,5 @@ Every Friday 18:00 <br>
 <li>letcure 8 - 08.12.2017</li>
 <li>letcure 9 - 28.02.2018</li>
 <li>letcure 10 - 07.03.2018</li>
+<li>letcure 11 - 21.03.2018</li>
 </ul>

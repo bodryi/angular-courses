@@ -1,0 +1,5 @@
+<button class="counter-button minus" (click)="decrease()">&#8722;</button>
+<div class="current-counter-value">
+	{{counterValue$ | async}}
+</div>
+<button class="counter-button plus" (click)="increase()">&#43;</button>

@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    margin: 20px 0;
+}
+
+.counter-button {
+    font-size: 70px;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    background: lightblue;
+    border: 1px solid lightcyan;
+    margin: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.minus:hover {
+    background: lightcoral;
+}
+
+.plus:hover {
+    background: lightgreen;
+}
+
+.current-counter-value {
+    font-size: 80px;
+    align-self: center;
+    margin: 0 40px;
+    width: 105px;
+    text-align: center;
+}
