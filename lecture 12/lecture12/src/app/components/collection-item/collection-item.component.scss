@@ -1,0 +1,40 @@
+
+
+
+@import "../../scss/variables";
+
+.item-wrapper {
+  display: flex;
+  width: 100%;
+  padding: $container-padding;
+  border: lightgray;
+  margin: 15px 0;
+  box-shadow: -1px 4px 12px -6px rgba(0,0,0,0.5);
+  background: white;
+  cursor: pointer;
+
+  .item-title {
+    width: 80%;
+    margin-right: 5%;
+    align-items: center;
+    display: flex;
+    font-size: $app-font-size + 3px;
+  }
+
+  .actions-wrapper {
+    button {
+      border-radius: $form-controls-border-radius;
+      background: lightcoral;
+      border: bisque 1px solid;
+      outline: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: $app-font-size - 1px;
+      color: white;
+
+      &:hover {
+        background: lightsalmon;
+      }
+    }
+  }
+}

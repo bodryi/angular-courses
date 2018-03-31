@@ -1,0 +1,54 @@
+
+
+
+@import "scss/variables";
+
+.app-wrapper {
+  width: 25%;
+  padding-top: 10%;
+  margin: 0 auto;
+
+  .form-wrapper {
+    width: 100%;
+    padding: $container-padding;
+    background: white;
+    border: lightgray;
+    box-shadow: -1px 4px 12px -6px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+
+    form {
+      width: 100%;
+      display: flex;
+
+      input {
+        width: 85%;
+        margin-right: 5%;
+        padding: $input-padding;
+        border: none;
+        outline: none;
+        font-size: $app-font-size;
+      }
+
+      button {
+        border-radius: $form-controls-border-radius;
+        background: #8C6FF6;
+        border: bisque 1px solid;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: $app-font-size;
+        color: white;
+        opacity: 0.8;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &:disabled {
+          background: lightgray;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
