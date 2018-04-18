@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers/reducers';
+import {DumbService} from './services/dumb.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { reducers } from './store/reducers/reducers';
     BrowserModule,
     StoreModule.forRoot(reducers),
   ],
-  providers: [],
+  providers: [DumbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

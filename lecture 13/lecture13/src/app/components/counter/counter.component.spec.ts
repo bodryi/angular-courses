@@ -43,14 +43,13 @@ describe('Components: CounterComponent', () => {
   }));
 
   it('counterValue$ to be defiend', async(() => {
-    component.ngOnInit();
     fixture.detectChanges();
     expect(component.counterValue$).toBeDefined();
     component.counterValue$.subscribe(value => expect(value).toBeDefined());
   }));
 
   it('counterValue$ to be rendered in template', async(() => {
-    component.ngOnInit();
+    fixture.detectChanges();
     let counterValue: number;
     component.counterValue$.subscribe(value => counterValue = value);
     fixture.detectChanges();
@@ -58,7 +57,7 @@ describe('Components: CounterComponent', () => {
   }));
 
   it('counterValue$ to be increased by 1', async(() => {
-    component.ngOnInit();
+    fixture.detectChanges();
     let counterValue: number;
     component.counterValue$.subscribe(value => counterValue = value);
     expect(counterValue).toBe(0);
@@ -69,7 +68,7 @@ describe('Components: CounterComponent', () => {
   }));
 
   it('counterValue$ to be increased by 1 with button click', async(() => {
-    component.ngOnInit();
+    fixture.detectChanges();
     let counterValue: number;
     component.counterValue$.subscribe(value => counterValue = value);
     expect(counterValue).toBe(0);
@@ -80,7 +79,7 @@ describe('Components: CounterComponent', () => {
   }));
 
   it('counterValue$ to be decreased by 1', async(() => {
-    component.ngOnInit();
+    fixture.detectChanges();
     let counterValue: number;
     component.counterValue$.subscribe(value => counterValue = value);
     expect(counterValue).toBe(0);
@@ -91,7 +90,7 @@ describe('Components: CounterComponent', () => {
   }));
 
   it('counterValue$ to be decreased by 1 with button click', async(() => {
-    component.ngOnInit();
+    fixture.detectChanges();
     let counterValue: number;
     component.counterValue$.subscribe(value => counterValue = value);
     expect(counterValue).toBe(0);
