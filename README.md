@@ -1,4 +1,4 @@
-# Course for eltech studends
+# Course for eltech students
 Development of web apps with Angular 4+.<br>
 <strike>Every Friday 18:00 (1 sem)</strike><br>
 Every Wednesday  18:00 (2 sem)<br>
